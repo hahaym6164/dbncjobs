@@ -7,7 +7,7 @@ rooms = [
 And produces the following output:
 <ol><li>Queen, 5, $100</li><li>Double, 3, $75</li><li>Twin, 8, $60</li></ol>
   
- Anwser:
+ ##Anwser:
  
 <ol>{rooms.map(i => (
     <li> {i.room_type}, {i.vacant_rooms} , $ {i.price} </li>
