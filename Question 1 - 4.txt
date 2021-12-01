@@ -1,0 +1,98 @@
+1. Write a react function that takes the following input:
+rooms = [
+    { room_type: "Queen", vacant_rooms: 5, price: 100 },
+    { room_type: "Double", vacant_rooms: 3, price: 75 },
+    { room_type: "Twin", vacant_rooms: 8, price: 60 }
+  ];
+And produces the following output:
+<ol><li>Queen, 5, $100</li><li>Double, 3, $75</li><li>Twin, 8, $60</li></ol>
+  
+ Anwser:
+ 
+<ol>{rooms.map(i => (
+    <li> {i.room_type}, {i.vacant_rooms} , $ {i.price} </li>
+))}</ol>
+ 
+
+2. Write a function in Javascript, which receives NUMBER and has the next logic:
+a) it prints "foo" if NUMBER is divisible by 2;
+b) it prints "bar" if NUMBER is divisible by 7;
+c) it prints "foobar" if NUMBER is divisible by 14;
+d) it prints NUMBER value for other cases;
+note: NUMBER is a positive integer number;
+ 
+ Answer:
+ 
+ function foobar(NUMBER) {
+    let res = ''
+    res += NUMBER % 2 === 0 ? 'foo' : ''
+    res += NUMBER % 7 === 0 ? 'bar' : ''
+    res = res ? res : NUMBER
+    console.log(res);
+}
+ 
+ 
+3. Let's say you have a file with a following structure:
+"id,name,value
+1,Dan,150
+2,Peter,300
+3,Mark,400
+4,Victor,600"
+
+Write a function in node.js that reads this file and returns the number, which is a sum of all "value" numbers from the file;
+
+Answer:
+
+const fs = require('fs')
+
+function readTheFile() {
+    // url is the path of the file
+    let url = 'url'
+    fs.readFile(url, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err)
+            return
+        }
+        let arr = data.split(',')
+        arr = arr.filter(i => i.includes('\r\n'))
+        let res = 0
+        arr.shift()
+        arr.map(i => {
+            i = i.slice(0, i.indexOf('\\'));
+            if (parseInt(i)) {
+                res += parseInt(i)
+            }
+        })
+        return res
+    })
+}
+
+
+
+
+
+
+
+
+4. Refactor the code below.
+(do not create functions or constants, code refactor is required only)
+ 
+if (province == 'ONTARIO') {
+   rate = ONTARIO_RATE;
+   amt = base * ONTARIO_RATE;
+   calc = 2 * basis(amt) + extra(amt) * 1.05;
+} else if ((province == 'QUEBEC') || (province == 'ALBERTA')) {
+   rate = (province == 'QUEBEC') ? QUEBEC_RATE : ALBERTA_RATE;
+   amt = base * rate;
+   calc = 2 * basis(amt) + extra(amt) * 1.05;
+   if (province == 'QUEBEC') {
+       points = 2;
+   }
+} else {
+   rate = 1;
+   amt = base;
+   calc = 2 * basis(amt) + extra(amt) * 1.05;
+}
+
+
+
