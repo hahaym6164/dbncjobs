@@ -6,7 +6,9 @@
 ## Run "npm install" before start 
 In windows 10 Enviroment
 Run
->          "[Chrome.exe path] --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp" to Avoid CORS 
+>          "[Chrome.exe path] --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp" 
+to Avoid CORS 
+
 For example: 
 Run 
 >         "C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp
